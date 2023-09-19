@@ -1,4 +1,3 @@
-import { WETH } from '@josojo/honeyswap-sdk'
 import { createReducer } from '@reduxjs/toolkit'
 
 import {
@@ -73,8 +72,8 @@ export default createReducer(initialState, (builder) =>
         // Take a look at this at some point, why this timestamp ?
         if (state.timestamp < 1590027589111) {
           // this should remove the user added token from 'eth' for mainnet
-          if (state.tokens[ChainId.MAINNET]) {
-            delete state.tokens[ChainId.MAINNET][WETH[ChainId.MAINNET].address]
+          if (state.tokens[ChainId.BASE]) {
+            delete state.tokens[ChainId.BASE]['0x4200000000000000000000000000000000000006']
           }
         }
       }

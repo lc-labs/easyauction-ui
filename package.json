@@ -152,8 +152,8 @@
     "typescript": "^5.0.3",
     "uniswap-xdai-sdk": "^3.0.2-a3",
     "use-media": "^1.4.0",
-    "viem": "^0.3.36",
-    "wagmi": "^1.0.6",
+    "viem": "^1.10.14",
+    "wagmi": "^1.4.2",
     "yarn": "^1.22.19"
   },
   "lint-staged": {

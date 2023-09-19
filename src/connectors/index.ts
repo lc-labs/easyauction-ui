@@ -8,35 +8,11 @@ import { WalletConnectConnector as WC } from 'wagmi/connectors/walletConnect'
 import { infuraProvider } from 'wagmi/providers/infura'
 import { publicProvider } from 'wagmi/providers/public'
 
-import {
-  ChainId,
-  NETWORK_CONFIGS,
-  avalanche,
-  avalancheFuji,
-  bsc,
-  bscTestnet,
-  gnosis,
-  goerli,
-  mainnet,
-  polygon,
-  polygonMumbai,
-  sepolia,
-} from './../utils/networkConfig'
+import { ChainId, NETWORK_CONFIGS, base } from './../utils/networkConfig'
 import { INFURA_KEY, PORTIS_ID, WALLET_CONNECT_PROJECT_ID } from '../constants/config'
 
 const { chains, publicClient } = configureChains(
-  [
-    mainnet,
-    polygonMumbai,
-    gnosis,
-    goerli,
-    polygon,
-    avalanche,
-    avalancheFuji,
-    bsc,
-    bscTestnet,
-    sepolia,
-  ],
+  [base],
   [infuraProvider({ apiKey: INFURA_KEY }), publicProvider()],
 )
 
@@ -48,9 +24,10 @@ const coinbaseWalletConnector = new CoinbaseWalletConnector({
   chains,
   options: {
     appName: 'gnosis-auction.eth',
-    jsonRpcUrl: `${mainnet.rpcUrls.public.http}`,
+    jsonRpcUrl: `${base.rpcUrls.public.http}`,
   },
 })
+
 export const walletConnectConnector = new WC({
   chains,
   options: {

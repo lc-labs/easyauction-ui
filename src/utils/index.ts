@@ -4,7 +4,7 @@ import { AddressZero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
 import { Provider, Web3Provider } from '@ethersproject/providers'
 import { parseBytes32String } from '@ethersproject/strings'
-import { JSBI, Percent, Token, TokenAmount, WETH } from '@josojo/honeyswap-sdk'
+import { JSBI, Percent, Token, TokenAmount } from '@josojo/honeyswap-sdk'
 import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
 import { PublicClient } from 'viem'
 
@@ -28,39 +28,15 @@ export function isAddress(value: any): string | false {
 }
 
 export const EASY_AUCTION_NETWORKS: { [chainId in ChainId]: string } = {
-  [ChainId.MAINNET]: '0x0b7fFc1f4AD541A4Ed16b40D8c37f0929158D101',
-  [ChainId.GÖRLI]: '0x1fBAb40C338E2e7243DA945820Ba680C92EF8281',
-  [ChainId.XDAI]: '0x0b7fFc1f4AD541A4Ed16b40D8c37f0929158D101',
-  [ChainId.MATIC]: '0x0b7fFc1f4AD541A4Ed16b40D8c37f0929158D101',
-  [ChainId.MUMBAI]: '0x4100aF1E6e8bBc174fc5da4D409e1e3C03F1f85E',
-  [ChainId.AVALANCHE]: '0xb5D00F83680ea5E078e911995c64b43Fbfd1eE61',
-  [ChainId.FUJI]: '0xa5cd8D8effACB7Ad861e3797404924199D1463a5',
-  [ChainId.BSC]: '0x231F3Fd7c3E3C9a2c8A03B72132c31241DF0a26C',
-  [ChainId.BSCTESTNET]: '0x231F3Fd7c3E3C9a2c8A03B72132c31241DF0a26C',
+  [ChainId.BASE]: '0xb1875Feaeea32Bbb02DE83D81772e07E37A40f02',
 }
 
 export const DEPOSIT_AND_PLACE_ORDER: { [chainId in ChainId]: string } = {
-  [ChainId.MAINNET]: '0x10D15DEA67f7C95e2F9Fe4eCC245a8862b9B5B96',
-  [ChainId.GÖRLI]: '0xc6e51F2cb369F03672197D0C31Dd5F0d9566217B',
-  [ChainId.XDAI]: '0x845AbED0734e39614FEC4245F3F3C88E2da98157',
-  [ChainId.MATIC]: '0x93D2BbA07b44e8F2b02F7DA164eE4f7442a3B618',
-  [ChainId.MUMBAI]: '0x7f49Ee20f2E83Ca53B08944938E9B6Fad8e3E3B6',
-  [ChainId.AVALANCHE]: '0x193c8993480DF4c1dBBdB39dB07511f7D789cedb',
-  [ChainId.FUJI]: '0x39cbA0cC28EE67EAa8134C0e80a061c13EBC3603',
-  [ChainId.BSC]: '0x4bAbb4b89ed7180aeF95F872f621afEE724F0344',
-  [ChainId.BSCTESTNET]: '0x14082EDeFCa073578d2C16E8fB42967bEc188E59',
+  [ChainId.BASE]: '0x1032398195dE7d5DcfE3a7DbBC6C5d9c846D9Ea5',
 }
 
 export const ALLOW_LIST_OFF_CHAIN_MANAGED: { [chainId in ChainId]: string } = {
-  [ChainId.MAINNET]: '0x0F4648d997e486cE06577d6Ee2FecBcA84b834F4',
-  [ChainId.GÖRLI]: '0xE0AD16EB7Ea467C694E6cFdd5E7D61FE850e8B53',
-  [ChainId.XDAI]: '0x0F4648d997e486cE06577d6Ee2FecBcA84b834F4',
-  [ChainId.MATIC]: '0x0480A370279B2e70378188E1bd4f1cD7D76D8aD2',
-  [ChainId.MUMBAI]: '0xE0AD16EB7Ea467C694E6cFdd5E7D61FE850e8B53',
-  [ChainId.AVALANCHE]: '0x5ae9b340A98085D0fc25Ae98A5eB704bA08E0dF8',
-  [ChainId.FUJI]: '0x2f0045AA41879184a283A644F25Ec4FA31C8767E',
-  [ChainId.BSC]: '0xE0AD16EB7Ea467C694E6cFdd5E7D61FE850e8B53',
-  [ChainId.BSCTESTNET]: '0xE0AD16EB7Ea467C694E6cFdd5E7D61FE850e8B53',
+  [ChainId.BASE]: '0xE0AD16EB7Ea467C694E6cFdd5E7D61FE850e8B53',
 }
 
 const getExplorerPrefix = (chainId: ChainId) => {
@@ -208,20 +184,20 @@ export function getFullTokenDisplay(token: Token, chainId: ChainId): string {
 }
 
 export function isTokenXDAI(tokenAddress?: string, chainId?: ChainId): boolean {
-  return !!tokenAddress && !!chainId && tokenAddress == WETH[chainId]?.address && chainId === 100
+  return false
 }
 
 export function isTokenWETH(tokenAddress?: string, chainId?: ChainId): boolean {
   return (
     !!tokenAddress &&
     !!chainId &&
-    tokenAddress == WETH[chainId]?.address &&
-    (chainId === 1 || chainId === 5)
+    tokenAddress == '0x4200000000000000000000000000000000000006' &&
+    chainId === 8453
   )
 }
 
 export function isTokenWMATIC(tokenAddress?: string, chainId?: ChainId): boolean {
-  return !!tokenAddress && !!chainId && tokenAddress == WETH[chainId]?.address && chainId === 137
+  return false
 }
 
 export function isTimeout(timeId: NodeJS.Timeout | undefined): timeId is NodeJS.Timeout {

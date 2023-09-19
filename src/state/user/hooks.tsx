@@ -170,18 +170,11 @@ export function useTokenWarningDismissal(
 const bases = [
   ...Object.values(WETH),
   new Token(
-    ChainId.MAINNET as number,
-    '0x6B175474E89094C44Da98b954EedeAC495271d0F',
+    ChainId.BASE as number,
+    '0x4200000000000000000000000000000000000006',
     18,
-    'DAI',
-    'Dai Stablecoin',
-  ),
-  new Token(
-    ChainId.MAINNET as number,
-    '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-    6,
-    'USDC',
-    'USD//C',
+    'WETH',
+    'Wrapped ETH',
   ),
 ]
 
