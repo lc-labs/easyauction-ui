@@ -9,7 +9,7 @@ function createAdditionalServiceApi(): AdditionalServicesApi {
   const config: AdditionalServicesEndpoint[] = [
     {
       networkId: 8453,
-      graph_url_production: 'http://34.68.171.46:8000/subgraphs/name/gnosis-auction/ga-base',
+      graph_url_production: 'https://graph-base.register.app/subgraphs/name/gnosis-auction/ga-base',
     },
   ]
 
