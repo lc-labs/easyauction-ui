@@ -67,7 +67,7 @@ export function usePlaceOrderCallback(
     let previousOrder: string
 
     return async function onPlaceOrder() {
-      if (!chainId || !library || !account || !signature) {
+      if (!chainId || !library || !account) {
         throw new Error('missing dependencies in onPlaceOrder callback')
       }
 
