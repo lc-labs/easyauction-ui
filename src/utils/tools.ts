@@ -56,5 +56,5 @@ export const calculateTimeProgress = (auctionStartDate: number, auctionEndDate: 
 }
 
 export const getChainName = (chainId: number) => {
-  return (chainId === ChainId.BASE && 'Base Mainnet') || 'Unknown Network'
+  return (chainId === ChainId.MAINNET && 'Fork Mainnet') || 'Unknown Network'
 }

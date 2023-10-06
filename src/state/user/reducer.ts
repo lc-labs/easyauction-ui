@@ -72,8 +72,8 @@ export default createReducer(initialState, (builder) =>
         // Take a look at this at some point, why this timestamp ?
         if (state.timestamp < 1590027589111) {
           // this should remove the user added token from 'eth' for mainnet
-          if (state.tokens[ChainId.BASE]) {
-            delete state.tokens[ChainId.BASE]['0x4200000000000000000000000000000000000006']
+          if (state.tokens[ChainId.MAINNET]) {
+            delete state.tokens[ChainId.MAINNET]['0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2']
           }
         }
       }

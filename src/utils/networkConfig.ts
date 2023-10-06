@@ -1,14 +1,26 @@
-import { Chain, base } from 'viem/chains'
+import { Chain, mainnet } from 'viem/chains'
 
-export { base }
+const modifiedMainnet = {
+  ...mainnet,
+  rpcUrls: {
+    default: {
+      http: [`http://34.27.58.31:8545/`],
+    },
+    public: {
+      http: [`http://34.27.58.31:8545/`],
+    },
+  },
+}
+
+export { modifiedMainnet }
 export type { Chain }
 
 export enum ChainId {
-  BASE = 8453,
+  MAINNET = 1,
 }
 
 export const NETWORK_CONFIGS: {
   [chainId in ChainId]: Chain
 } = {
-  [base.id]: base,
+  [modifiedMainnet.id]: modifiedMainnet,
 }

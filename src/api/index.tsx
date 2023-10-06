@@ -8,8 +8,9 @@ import { TokenLogosServiceApi, TokenLogosServiceApiInterface } from './TokenLogo
 function createAdditionalServiceApi(): AdditionalServicesApi {
   const config: AdditionalServicesEndpoint[] = [
     {
-      networkId: 8453,
-      graph_url_production: 'https://graph-base.register.app/subgraphs/name/gnosis-auction/ga-base',
+      networkId: 1,
+      graph_url_production:
+        'https://graph-fork.register.app/subgraphs/name/gnosis-auction/ga-mainnet',
     },
   ]
 
