@@ -7,7 +7,7 @@
     "node": ">=4.4.7"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "build": "cross-env react-scripts build",
     "ipfs-build": "cross-env PUBLIC_URL=\".\" react-scripts build",
     "ipfs-publish": "ipfs-deploy -p infura -O dist ./build",

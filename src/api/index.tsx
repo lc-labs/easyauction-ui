@@ -9,8 +9,7 @@ function createAdditionalServiceApi(): AdditionalServicesApi {
   const config: AdditionalServicesEndpoint[] = [
     {
       networkId: 1,
-      graph_url_production:
-        'https://graph-fork.register.app/subgraphs/name/gnosis-auction/ga-mainnet',
+      graph_url_production: 'https://subgraph.forknet.org/subgraphs/name/gnosis-auction/ga-mainnet',
     },
   ]
 

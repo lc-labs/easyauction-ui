@@ -4,10 +4,10 @@ const modifiedMainnet = {
   ...mainnet,
   rpcUrls: {
     default: {
-      http: [`http://34.27.58.31:8545/`],
+      http: [`https://rpc.forknet.org/`],
     },
     public: {
-      http: [`http://34.27.58.31:8545/`],
+      http: [`https://rpc.forknet.org/`],
     },
   },
 }
