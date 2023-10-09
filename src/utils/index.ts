@@ -28,15 +28,15 @@ export function isAddress(value: any): string | false {
 }
 
 export const EASY_AUCTION_NETWORKS: { [chainId in ChainId]: string } = {
-  [ChainId.MAINNET]: '0x20Dc424c5fa468CbB1c702308F0cC9c14DA2825C',
+  [ChainId.MAINNET]: '0x0b7fFc1f4AD541A4Ed16b40D8c37f0929158D101',
 }
 
 export const DEPOSIT_AND_PLACE_ORDER: { [chainId in ChainId]: string } = {
-  [ChainId.MAINNET]: '0x48EA52fa1aD5feDdc715408020BB17A6C07496CC',
+  [ChainId.MAINNET]: '0x10D15DEA67f7C95e2F9Fe4eCC245a8862b9B5B96',
 }
 
 export const ALLOW_LIST_OFF_CHAIN_MANAGED: { [chainId in ChainId]: string } = {
-  [ChainId.MAINNET]: '0xE0AD16EB7Ea467C694E6cFdd5E7D61FE850e8B53',
+  [ChainId.MAINNET]: '0x0F4648d997e486cE06577d6Ee2FecBcA84b834F4',
 }
 
 const getExplorerPrefix = (chainId: ChainId) => {
